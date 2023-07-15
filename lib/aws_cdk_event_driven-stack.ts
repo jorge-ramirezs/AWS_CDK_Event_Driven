@@ -1,7 +1,5 @@
 import { Stack, StackProps, aws_s3 as s3 } from "aws-cdk-lib";
 import { Construct } from "constructs";
-// import { aws_s3 as s3 } from "aws-cdk-lib";
-// import * as cdk from 'aws-cdk-lib';
 
 export class AwsCdkEventDrivenStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
