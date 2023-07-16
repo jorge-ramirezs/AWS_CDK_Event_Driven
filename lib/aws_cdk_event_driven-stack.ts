@@ -66,11 +66,12 @@ export class AwsCdkEventDrivenStack extends Stack {
     const region = Aws.REGION;
     const accountId = Aws.ACCOUNT_ID;
 
-    const glueJobArn = `arn:aws:glue:${region}:${accountId}:/job/${glueJob.ref}`;
+    const glueJobArn = `arn:aws:glue:${region}:${accountId}:job/${glueJob.ref}`;
 
     const glueJobPermission = new iam.PolicyStatement({
       actions: ["glue:StartJobRun"],
       resources: [glueJobArn],
+      effect: iam.Effect.ALLOW,
     });
 
     lambdaTrigger.addToRolePolicy(glueJobPermission);

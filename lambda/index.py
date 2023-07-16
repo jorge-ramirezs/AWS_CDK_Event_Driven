@@ -17,8 +17,9 @@ def handler(event, context):
         response = client.start_job_run(
             JobName=glue_job_name,
             Arguments={
-                '--s3-bucket': bucket_name,
-                '--s3-key': object_key,
+                '--GLUE_JOB': glue_job_name,
+                '--s3_bucket': bucket_name,
+                '--s3_key': object_key,
             }
         )
 
